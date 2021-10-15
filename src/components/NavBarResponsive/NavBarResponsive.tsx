@@ -1,6 +1,11 @@
-import { Flex, Image, Link, Button, HStack, Text } from '@chakra-ui/react'
+import { Flex, Image, Link, Button, HStack, IconButton, Text } from '@chakra-ui/react'
+import { HamburgerIcon } from '@chakra-ui/icons'
 
-export function NavBar() {
+export function NavBarResponsive({
+  displayActive,
+  changeDisplayActive,
+  changeDisplayNavMobile,
+}) {
   return (
     <Flex
       as="nav"
@@ -10,6 +15,7 @@ export function NavBar() {
       borderBottom={['1px solid #CBCACC', '1px solid #CBCACC', '2px solid #CBCACC']}
       align="center"
       padding="0 3rem"
+      display={displayActive}
     >
       <Link
         href="./"
@@ -79,6 +85,27 @@ export function NavBar() {
 
         </HStack>
       </Flex>
+
+      <IconButton
+        aria-label="Open Menu"
+        marginRight="1rem"
+        fontSize="2rem"
+        icon={<HamburgerIcon />}
+        color="#595959"
+        display={['flex', 'flex', 'none']}
+        backgroundColor="#ffffff"
+        boxShadow="#ffffff"
+        _hover={{
+          backgroundColor: '#ffffff',
+        }}
+        _focus={{
+          backgroundColor: '#ffffff',
+        }}
+        onClick={() => {
+          changeDisplayActive('none')
+          changeDisplayNavMobile('block')
+        }}
+      ></IconButton>
     </Flex>
   )
 }

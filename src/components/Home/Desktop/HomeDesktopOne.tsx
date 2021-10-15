@@ -16,11 +16,12 @@ export function HomeDeskTopOne() {
       display={['none', 'none', 'flex']}
       flexDirection="column"
       alignItems="center"
-      height="80vh"
+      height="calc(100vh - 5rem)"
     >
       <Heading 
+        marginTop="-2rem"
         width="60%"
-        fontSize="3rem"
+        fontSize="2.5rem"
         color="#3E3D40"
         textAlign="center"
       >

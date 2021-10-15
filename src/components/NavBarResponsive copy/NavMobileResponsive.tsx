@@ -9,7 +9,7 @@ import {
 } from '@chakra-ui/react'
 import { CloseIcon, ChevronRightIcon } from '@chakra-ui/icons'
 
-export function NavMobile({
+export function NavMobileResponsive({
   displayNavMobile,
   setDisplayNavMobile,
   setdisplayActive,

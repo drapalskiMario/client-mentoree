@@ -1,13 +1,15 @@
 import { useState } from 'react'
 import { Box } from '@chakra-ui/react'
-import { NavMobile } from '../components/NavBar/NavMobile'
-import { NavBar } from '../components/NavBar/NavBar'
+import { NavMobileResponsive } from '../components/NavBarResponsive/NavMobileResponsive'
+import { NavBarResponsive } from '../components/NavBarResponsive/NavBarResponsive'
 import { HomeMobileOne } from '../components/Home/Mobile/HomeMobileOne'
 import { HomeMobileTwo } from '../components/Home/Mobile/HomeMobileTwo'
 import { HomeMobileThree } from '../components/Home/Mobile/HomeMobileThree'
 import { FooterMobile } from '../components/Footer/FooterMobile'
 import { HomeDeskTopOne } from '../components/Home/Desktop/HomeDesktopOne'
 import { HomeDesktopTwo } from '../components/Home/Desktop/HomeDesktopTwo'
+import { HomeDesktopThree } from '../components/Home/Desktop/HomeDesktopThree'
+import { FooterDesktop } from '../components/Footer/FooterDesktop'
 
 export default function Home() {
   const [displayActive, changeDisplayActive] = useState('flex')
@@ -15,22 +17,24 @@ export default function Home() {
 
   return (
     <Box>
-      <NavBar
+      <NavBarResponsive
         displayActive={displayActive}
         changeDisplayActive={changeDisplayActive}
         changeDisplayNavMobile={changeDisplayNavMobile}
       />
-      <NavMobile
+      <NavMobileResponsive
         displayNavMobile={displayNavMobile}
         setDisplayNavMobile={changeDisplayNavMobile}
         setdisplayActive={changeDisplayActive}
-        />
+      />
       <HomeMobileOne displayActive={displayActive} />
       <HomeMobileTwo displayActive={displayActive} />
       <HomeMobileThree displayActive={displayActive} />
       <FooterMobile displayActive={displayActive} />
-      <HomeDeskTopOne/>
-      <HomeDesktopTwo/>
+      <HomeDeskTopOne />
+      <HomeDesktopTwo />
+      <HomeDesktopThree />
+      <FooterDesktop />
     </Box>
   )
 }
