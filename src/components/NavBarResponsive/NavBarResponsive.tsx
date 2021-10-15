@@ -56,7 +56,9 @@ export function NavBarResponsive({
             borderRadius=".75rem"
             variant="unstyled"
           >
-            <Link>
+            <Link
+              href="./login"
+            >
               <Text
                 fontSize="1.25rem"
               >

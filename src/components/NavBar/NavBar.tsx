@@ -33,7 +33,10 @@ export function NavBar() {
               Encontrar mentor
             </Text>
           </Link>
-          <Link margin="0 2rem">
+          <Link 
+            href="./signup"
+            margin="0 2rem"
+          >
             <Text
               fontSize="1.15rem"
               fontWeight="bold"
@@ -50,7 +53,9 @@ export function NavBar() {
             borderRadius=".75rem"
             variant="unstyled"
           >
-            <Link>
+            <Link
+              href="./login"
+            >
               <Text
                 fontSize="1.25rem"
               >

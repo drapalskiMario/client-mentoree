@@ -3,8 +3,8 @@ import { FooterDesktop } from "../components/Footer/FooterDesktop"
 import { FooterMobile } from "../components/Footer/FooterMobile"
 import { NavBarResponsive } from "../components/NavBarResponsive/NavBarResponsive"
 import { NavMobileResponsive } from "../components/NavBarResponsive/NavMobileResponsive"
-import { ProfileDesktop } from "../components/Profile/ProfileDesktop"
-import { ProfileMobile } from "../components/Profile/ProfileMobile"
+import { ProfileUpdateDesktop } from "../components/ProfileUpdate/ProfileUpdateDesktop"
+import { ProfileUpdateMobile } from "../components/ProfileUpdate/ProfileMobile"
 
 export default function ProfileUpdate() {
   const [displayActive, changeDisplayActive] = useState('flex')
@@ -22,8 +22,8 @@ export default function ProfileUpdate() {
         setDisplayNavMobile={changeDisplayNavMobile}
         setdisplayActive={changeDisplayActive}
       />
-      <ProfileDesktop />
-      <ProfileMobile 
+      <ProfileUpdateDesktop />
+      <ProfileUpdateMobile 
         displayActive={displayActive} 
       />
       <FooterMobile 

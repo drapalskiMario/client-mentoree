@@ -15,7 +15,9 @@ export function NavMobileResponsive({
   setdisplayActive,
 }) {
   return (
-    <Box display={displayNavMobile}>
+    <Box
+      display={[displayNavMobile, displayNavMobile, 'none']}
+    >
       <Flex
         as="nav"
         width="100vw"
@@ -51,8 +53,14 @@ export function NavMobileResponsive({
         alignItems="center"
         marginTop="2rem"
       >
-        <Link width="80%" height="40%">
-          <Flex alignItems="center" justifyContent="space-between">
+        <Link
+          width="80%"
+          height="40%"
+        >
+          <Flex
+            alignItems="center"
+            justifyContent="space-between"
+          >
             <Text>Encontre um mentor</Text>
             <IconButton
               aria-label="Encontre um mentor"
@@ -71,8 +79,15 @@ export function NavMobileResponsive({
           </Flex>
         </Link>
 
-        <Link width="80%" height="40%">
-          <Flex alignItems="center" justifyContent="space-between">
+        <Link
+          href="./signup"
+          width="80%"
+          height="40%"
+        >
+          <Flex
+            alignItems="center"
+            justifyContent="space-between"
+          >
             <Text>Seja um mentor</Text>
             <IconButton
               aria-label="Seja um mentor"
@@ -100,12 +115,13 @@ export function NavMobileResponsive({
           color="#F26419"
           backgroundColor="#ffffff"
           borderRadius=".75rem"
-          _hover={{
-            color: '#ffffff',
-            backgroundColor: '#F26419',
-          }}
+          variant="unstyled"
         >
-          <Link>Entrar</Link>
+          <Link
+            href="./login"
+          >
+            Entrar
+          </Link>
         </Button>
 
         <Button
@@ -115,13 +131,13 @@ export function NavMobileResponsive({
           color="#ffffff"
           backgroundColor="#F26419"
           borderRadius=".75rem"
-          _hover={{
-            backgroundColor: '#ffffff',
-            color: '#F26419',
-            border: '1.5px solid #F26419',
-          }}
+          variant="unstyled"
         >
-          <Link>Cadastrar</Link>
+          <Link
+            href="./signup"
+          >
+            Cadastrar
+          </Link>
         </Button>
       </Flex>
     </Box>
