@@ -20,7 +20,9 @@ export function SignupDesktop() {
         width="80%"
         justifyContent="space-around"
       >
-        <Link>
+        <Link
+          color="#F26419"
+        >
           <Box>
             <Image
               src="/assets/images/SignupMentor.png"
@@ -37,7 +39,9 @@ export function SignupDesktop() {
             </Heading>
           </Box>
         </Link>
-        <Link>
+        <Link
+          color="#F26419"
+        >
           <Box>
             <Image
               src="/assets/images/SignupMentored.png"

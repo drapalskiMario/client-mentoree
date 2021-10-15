@@ -90,6 +90,7 @@ export function SignupMobilePartTwo() {
       </Link>
         <Link
           href="./signup-part-three"
+          color="#ffffff"
         >
           <Button
             width="6.5rem"

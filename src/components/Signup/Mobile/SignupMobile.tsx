@@ -13,6 +13,7 @@ export function SignupMobile () {
       </Heading>
       <Link
         margin="1rem auto"
+        color="#F26419"
       >
         <Text
           textAlign="center"
@@ -27,6 +28,7 @@ export function SignupMobile () {
       </Link>
       <Link
         margin="1rem auto"
+        color="#F26419"
       >
         <Text
           textAlign="center"

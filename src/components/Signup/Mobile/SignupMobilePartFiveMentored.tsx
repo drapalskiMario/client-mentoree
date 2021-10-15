@@ -77,7 +77,10 @@ export function SignupMobilePartFiveMentored() {
             </Text>
           </Flex>
         </Link>
-        <Link href="#">
+        <Link 
+          href="#"
+          color="#ffffff"
+        >
           <Button
             width="6.5rem"
             height="2.5rem"

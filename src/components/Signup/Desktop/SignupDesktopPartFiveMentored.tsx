@@ -76,6 +76,7 @@ export function SignupDesktopPartFiveMentored() {
         </Flex>
         <Link
           href="#"
+          color="#ffffff"
         >
           <Button
             width="12rem"

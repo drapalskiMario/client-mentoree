@@ -1,4 +1,4 @@
-import { Flex, Link, Image, Text } from '@chakra-ui/react'
+import { Flex, Link, Image, Text, HStack } from '@chakra-ui/react'
 
 export function FooterDesktop() {
   return (
@@ -31,30 +31,30 @@ export function FooterDesktop() {
         flexDirection="column"
         alignItems="center"
       >
-        <Flex
+        <HStack
           width="70%"
           justifyContent="flex-end"
+          spacing="1.5rem"
         >
-        <Link
-          href="https://www.linkedin.com/"
-        >
-          <Image
-            src="/assets/images/LogoLinkedIn.png"
-            width="40px"
-            height="40px"
-            marginRight="1.5rem"
-          />
-        </Link>
-        <Link
-          href="https://www.instagram.com/"
-        >
-          <Image
-            src="/assets/images/LogoInstagram.png"
-            width="40px"
-            height="40px"
-          />
-        </Link>
-        </Flex>
+          <Link
+            href="https://www.linkedin.com/"
+          >
+            <Image
+              src="/assets/images/LogoLinkedIn.png"
+              width="40px"
+              height="40px"
+            />
+          </Link>
+          <Link
+            href="https://www.instagram.com/"
+          >
+            <Image
+              src="/assets/images/LogoInstagram.png"
+              width="40px"
+              height="40px"
+            />
+          </Link>
+        </HStack>
         <Text
           fontSize="1rem"
           marginTop="0.5rem"

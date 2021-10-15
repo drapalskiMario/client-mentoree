@@ -93,7 +93,10 @@ export function SignupDesktopPartFiveMentor() {
             Voltar
           </Text>
         </Flex>
-        <Link href="#">
+        <Link 
+          href="#"
+          color="#ffffff"
+        >
           <Button
             width="12rem"
             height="3rem"
@@ -102,7 +105,11 @@ export function SignupDesktopPartFiveMentor() {
             variant="unstyled"
             marginTop="1rem"
           >
-            <Text fontSize="1rem">Finalizar</Text>
+            <Text
+              fontSize="1rem"
+            >
+              Finalizar
+            </Text>
           </Button>
         </Link>
       </Flex>

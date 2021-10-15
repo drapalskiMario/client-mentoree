@@ -99,6 +99,7 @@ export function SignupMobilePartFiveMentor() {
       </Link>
         <Link
           href="#"
+          color="#ffffff"
         >
           <Button
             width="6.5rem"

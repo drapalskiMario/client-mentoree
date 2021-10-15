@@ -14,7 +14,7 @@ export function NavBarResponsive({
       justifyContent="space-between"
       borderBottom={['1px solid #CBCACC', '1px solid #CBCACC', '2px solid #CBCACC']}
       align="center"
-      padding="0 3rem"
+      padding={["0 1rem", "0 1rem", "0 3rem"]}
       display={displayActive}
     >
       <Link

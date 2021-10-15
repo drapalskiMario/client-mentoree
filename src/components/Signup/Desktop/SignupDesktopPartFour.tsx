@@ -91,6 +91,7 @@ export function SignupDesktopPartFour() {
         </Flex>
        <Link
           href="./signup-part-five"
+          color="#ffffff"
         >
           <Button
             width="12rem"
