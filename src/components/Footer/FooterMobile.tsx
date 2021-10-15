@@ -20,21 +20,24 @@ export function FooterMobile({ displayActive }) {
             <Link>
               <Image
                 src="/assets/images/LogoLinkedIn.png"
-                width="1rem"
-                height="1rem"
+                width="1.5rem"
+                height="1.5rem"
               />
             </Link>
             <Link>
               <Image
                 src="/assets/images/LogoInstagram.png"
-                width="1rem"
-                height="1rem"
+                width="1.5rem"
+                height="1.5rem"
                 marginLeft="1rem"
               />
             </Link>
           </Flex>
         </Flex>
-        <Flex justifyContent="space-between" marginTop="0.5rem">
+        <Flex
+          justifyContent="space-between"
+          marginTop="0.5rem"
+        >
           <Text
             fontSize={['0.4rem', '0.7rem']}
             color="#080808"
@@ -45,6 +48,7 @@ export function FooterMobile({ displayActive }) {
           <Text
             fontSize={['0.4rem', '0.7rem']}
             color="#080808"
+            fontWeight="bold"
           >
             contato@mentoree.com
           </Text>

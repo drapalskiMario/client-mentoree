@@ -40,10 +40,10 @@ export function SignupMobilePartFiveMentored() {
           marginBottom="5rem"
           size="md"
         >
-          <option selected disabled>
+          <option selected>
             Selecione sua especialidade
           </option>
-          <option value="Junior">Design</option>
+          <option value="Desing">Design</option>
           <option value="DesenvolvimentoDeSoftware">
             Desenvolvimento de Software
           </option>

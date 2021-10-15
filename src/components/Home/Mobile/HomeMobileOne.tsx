@@ -20,7 +20,10 @@ export function HomeMobileOne({ displayActive }) {
         >
           Encontre mentores, agende sessões e desenvolva seu potencial.
         </Heading>
-        <Image src="/assets/images/HomeMobileOne.png" margin="3rem auto" />
+        <Image
+          src="/assets/images/HomeMobileOne.png"
+          margin="3rem auto" 
+        />
         <Flex
           margin="4rem auto 0.5rem auto"
           border="1px solid #8B8B8C"
