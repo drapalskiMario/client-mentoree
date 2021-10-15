@@ -1,0 +1,28 @@
+.responsive-calendar {
+  font-size: 8px !important;
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .responsive-calendar {
+    font-size: 7px !important;
+  }
+}
+
+.Calendar__monthYear.-shown > *:hover,
+.Calendar:not(.-noFocusOutline) .Calendar__monthYear.-shown > *:focus,
+.Calendar__monthYear > *.-activeBackground {
+  background: #F26419 !important;
+}
+
+.Calendar__monthSelectorItem:not(.-active) .Calendar__monthSelectorItemText:not(:disabled):hover,
+.Calendar__yearSelectorItem:not(.-active) .Calendar__yearSelectorText:not(:disabled):hover {
+  background: #F26419 !important;
+}
+
+.Calendar__day:not(.-blank):not(.-selectedStart):not(.-selectedEnd):not(.-selectedBetween):not(.-selected):hover {
+  background: #F26419 !important;
+  border-radius: 50%;
+  color: var(--cl-color-black);
+  border-color: transparent;
+}

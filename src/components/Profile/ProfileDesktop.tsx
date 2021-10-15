@@ -22,7 +22,7 @@ export function ProfileDesktop () {
             alignItems="center"
           >
             <Avatar
-              size="2.5xl"
+              size="2xl"
               src="https://github.com/drapalskiMario.png"
             />
             <Heading

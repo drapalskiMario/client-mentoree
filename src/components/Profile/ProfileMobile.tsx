@@ -86,16 +86,21 @@ export function ProfileMobile({ displayActive }) {
             Linkedin
           </Text>
         </Link>
-        <Button
-          fontSize="0.75rem"
-          marginTop="2rem"
-          width="100%"
-          height="2.5rem"
-          background="#F26419"
-          color="#FFFFFF"
+        <Link
+          href="./schedule-part-one"
         >
-          Quero agendar
-        </Button>
+          <Button
+            fontSize="0.75rem"
+            marginTop="2rem"
+            width="100%"
+            height="2.5rem"
+            background="#F26419"
+            color="#FFFFFF"
+            variant="unstyled"
+          >
+            Quero agendar
+          </Button>
+        </Link>
       </Box>
     </Flex>
   )
