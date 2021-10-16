@@ -4,6 +4,7 @@ import { FooterMobile } from "../components/Footer/FooterMobile"
 import { NavBarResponsive } from "../components/NavBarResponsive/NavBarResponsive"
 import { NavMobileResponsive } from "../components/NavBarResponsive/NavMobileResponsive"
 import SearchDesktop from "../components/Search/SearchDesktop"
+import SearchMobile from "../components/Search/SearchMobile"
 
 
 export default function Search() {
@@ -23,6 +24,7 @@ export default function Search() {
         setdisplayActive={changeDisplayActive}
       />
       <SearchDesktop />
+      <SearchMobile displayActive={displayActive} />
       <FooterDesktop />
       <FooterMobile displayActive={displayActive} />
     </>
