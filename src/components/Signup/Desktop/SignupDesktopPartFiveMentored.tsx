@@ -11,10 +11,10 @@ import {
 } from '@chakra-ui/react'
 import { ChevronLeftIcon } from '@chakra-ui/icons'
 
-export function SignupDesktopPartFiveMentored() {
+export function SignupDesktopPartFiveMentored({ displayPartFiveMentored }) {
   return (
     <Box
-      display={['none', 'none', 'block']}
+      display={['none', 'none', displayPartFiveMentored]}
       height="calc(100vh - (5rem + 6rem))"
       width="80%"
       margin="0 auto"
@@ -41,7 +41,13 @@ export function SignupDesktopPartFiveMentored() {
             >
               Quais especialidade você quer desenvolver?
             </FormLabel>
-            <Select color="#8B8B8C" width="47%" marginBottom="5rem" size="lg" placeholder="selecione a especialidade">
+            <Select
+              color="#8B8B8C"
+              width="47%"
+              marginBottom="5rem"
+              size="lg"
+              placeholder="selecione a especialidade"
+            >
               <option value="Desing">Design</option>
               <option value="DesenvolvimentoDeSoftware">
                 Desenvolvimento de Software

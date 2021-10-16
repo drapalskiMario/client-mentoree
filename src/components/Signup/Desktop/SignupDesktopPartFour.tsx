@@ -10,11 +10,36 @@ import {
   FormLabel,
 } from '@chakra-ui/react'
 import { ChevronLeftIcon } from '@chakra-ui/icons'
+import { FormEvent } from 'react'
 
-export function SignupDesktopPartFour() {
+export function SignupDesktopPartFour({
+  displayPartFour,
+  handleFormUser,
+  formUser,
+  setDisplayPartFour,
+  setDisplayPartFiveMentor,
+  setDisplayPartFiveMentored,
+  setDisplayPartThree,
+}) {
+  function nextStep(event: FormEvent) {
+    event.preventDefault()
+    if (formUser.isMentor === true) {
+      setDisplayPartFour('none')
+      setDisplayPartFiveMentor('block')
+    } else {
+      setDisplayPartFour('none')
+      setDisplayPartFiveMentored('block')
+    }
+  }
+
+  function previousStep() {
+    setDisplayPartFour('none')
+    setDisplayPartThree('block')
+  }
+
   return (
     <Box
-      display={['none', 'none', 'block']}
+      display={['none', 'none', displayPartFour]}
       height="calc(100vh - (5rem + 6rem))"
       width="80%"
       margin="0 auto"
@@ -33,7 +58,7 @@ export function SignupDesktopPartFour() {
       >
         Nos conte sobre sua atividade profissional.
       </Text>
-      <form action="">
+      <form onSubmit={nextStep}>
         <FormControl id="workplace" isRequired>
           <FormLabel
             color="#232126"
@@ -48,6 +73,8 @@ export function SignupDesktopPartFour() {
             height="2.25rem"
             width="47%"
             marginBottom="1rem"
+            name="workplace"
+            onChange={handleFormUser}
           />
         </FormControl>
         <FormControl id="job" isRequired>
@@ -64,6 +91,8 @@ export function SignupDesktopPartFour() {
             height="2.25rem"
             width="47%"
             marginBottom="1rem"
+            name="job"
+            onChange={handleFormUser}
           />
         </FormControl>
         <Flex
@@ -80,6 +109,7 @@ export function SignupDesktopPartFour() {
               backgroundColor="#ffffff"
               variant="unstyled"
               fontSize="2rem"
+              onClick={previousStep}
             />
             <Text
               fontSize="1rem"

@@ -10,10 +10,10 @@ import {
 } from '@chakra-ui/react'
 import { ChevronLeftIcon } from '@chakra-ui/icons'
 
-export function SignupDesktopPartFiveMentor() {
+export function SignupDesktopPartFiveMentor({ displayPartFiveMentor }) {
   return (
     <Box
-      display={['none', 'none', 'block']}
+      display={['none', 'none', displayPartFiveMentor]}
       height="calc(100vh - (5rem + 6rem))"
       width="80%"
       margin="0 auto"
