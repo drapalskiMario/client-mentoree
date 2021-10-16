@@ -39,7 +39,7 @@ export function NavBarResponsive({
               Encontrar mentor
             </Text>
           </Link>
-          <Link margin="0 2rem">
+          <Link margin="0 2rem" href="/signup">
             <Text
               fontSize="1.15rem"
               fontWeight="bold"

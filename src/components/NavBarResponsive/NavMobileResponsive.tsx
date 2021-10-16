@@ -61,7 +61,7 @@ export function NavMobileResponsive({
             alignItems="center"
             justifyContent="space-between"
           >
-            <Text>Encontre um mentor</Text>
+            <Link href="./search">Encontre um mentor</Link>
             <IconButton
               aria-label="Encontre um mentor"
               icon={<ChevronRightIcon />}
@@ -88,7 +88,9 @@ export function NavMobileResponsive({
             alignItems="center"
             justifyContent="space-between"
           >
-            <Text>Seja um mentor</Text>
+            <Link
+              href="./signup"
+            >Seja um mentor</Link>
             <IconButton
               aria-label="Seja um mentor"
               icon={<ChevronRightIcon />}

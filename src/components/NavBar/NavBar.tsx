@@ -25,7 +25,7 @@ export function NavBar() {
         marginRight="1rem"
       >
         <HStack spacing="2rem">
-          <Link margin="0 2rem">
+          <Link margin="0 2rem" href="./search">
             <Text
               fontSize="1.15rem"
               fontWeight="bold"
