@@ -1,7 +1,6 @@
 import {
   Text,
   Box,
-  Link,
   Input,
   Flex,
   IconButton,

@@ -1,8 +1,17 @@
 import { Heading, Flex, Box, Link, Image } from '@chakra-ui/react'
-export function SignupDesktop() {
+export function SignupDesktop({
+  display,
+  setFormUser,
+  setDisplay,
+  setDisplayPartOne,
+}) {
+  function updateFormUser(isMentor: boolean) {
+    setFormUser({ isMentor })
+  }
+
   return (
     <Flex
-      display={["none", "none", "flex"]}
+      display={['none', 'none', display]}
       height="calc(100vh - (5rem + 6rem))"
       flexDirection="column"
       alignItems="center"
@@ -16,19 +25,21 @@ export function SignupDesktop() {
       >
         Qual seu perfil?
       </Heading>
-      <Flex
-        width="80%"
-        justifyContent="space-around"
-      >
+      <Flex width="80%" justifyContent="space-around">
         <Link
           color="#F26419"
+          onClick={() => {
+            updateFormUser(true)
+            setDisplay('none')
+            setDisplayPartOne('block')
+          }}
         >
           <Box>
             <Image
               src="/assets/images/SignupMentor.png"
               widht="18rem"
               height="18rem"
-              />
+            />
             <Heading
               textAlign="center"
               fontSize="2rem"
@@ -41,6 +52,11 @@ export function SignupDesktop() {
         </Link>
         <Link
           color="#F26419"
+          onClick={() => {
+            updateFormUser(false)
+            setDisplay('none')
+            setDisplayPartOne('block')
+          }}
         >
           <Box>
             <Image
@@ -59,8 +75,6 @@ export function SignupDesktop() {
           </Box>
         </Link>
       </Flex>
-      
     </Flex>
-
   )
 }
