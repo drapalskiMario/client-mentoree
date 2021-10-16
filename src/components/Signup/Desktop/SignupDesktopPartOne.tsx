@@ -111,7 +111,7 @@ export function SignupDesktopPartOne({
               backgroundColor="#ffffff"
               variant="unstyled"
               fontSize="2rem"
-              onClick={nextStep}
+              onClick={previousStep}
             />
             <Text
               fontSize="1rem"

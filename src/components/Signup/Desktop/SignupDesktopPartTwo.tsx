@@ -9,11 +9,33 @@ import {
   FormLabel,
 } from '@chakra-ui/react'
 import { ChevronLeftIcon } from '@chakra-ui/icons'
+import { FormEvent } from 'react'
 
-export function SignupDesktopPartTwo() {
+export function SignupDesktopPartTwo({
+  displayPartTwo,
+  handleFormUser,
+  setDisplayPartTwo,
+  setDisplayPartThree,
+  setDisplayPartOne,
+}) {
+
+  function nextStep(event: FormEvent) {
+    event.preventDefault()
+    if (event.target['password'].value !== event.target['confirmationPassword'].value) {
+      window.alert('Confirmação de senha está diferente da senha informada')
+    } else {
+      setDisplayPartTwo('none')
+      setDisplayPartThree('block')
+    }
+  }
+
+  function previousStep() {
+    setDisplayPartTwo('none')
+    setDisplayPartOne('block')
+  }
   return (
     <Box
-      display={['none', 'none', 'block']}
+      display={['none', 'none', displayPartTwo]}
       height="calc(100vh - (5rem + 6rem))"
       width="80%"
       margin="0 auto"
@@ -29,7 +51,7 @@ export function SignupDesktopPartTwo() {
       >
         Olá Usuário. Vamos definir sua senha?
       </Text>
-      <form action="">
+      <form onSubmit={nextStep}>
         <FormControl id="password" isRequired>
           <FormLabel
             color="#232126"
@@ -40,11 +62,13 @@ export function SignupDesktopPartTwo() {
             Digite sua senha
           </FormLabel>
           <Input
-            placeholder="Digite aqui seu email"
+            placeholder="Digite aqui sua senha"
             height="2.25rem"
             width="47%"
             marginBottom="1rem"
             type="password"
+            name="password"
+            onChange={handleFormUser}
           />
         </FormControl>
         <FormControl id="confirmationPassword" isRequired>
@@ -62,6 +86,7 @@ export function SignupDesktopPartTwo() {
             width="47%"
             marginBottom="1rem"
             type="password"
+            name="confirmationPassword"
           />
         </FormControl>
         <Flex
@@ -78,6 +103,7 @@ export function SignupDesktopPartTwo() {
               backgroundColor="#ffffff"
               variant="unstyled"
               fontSize="2rem"
+              onClick={previousStep}
             />
             <Text
               fontSize="1rem"
