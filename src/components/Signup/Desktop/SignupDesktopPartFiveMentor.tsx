@@ -11,6 +11,7 @@ import {
 import { ChevronLeftIcon } from '@chakra-ui/icons'
 import { FormEvent } from 'react'
 import api from '../../../services/fetch-instace'
+import Router from 'next/router'
 
 export function SignupDesktopPartFiveMentor({
   displayPartFiveMentor,
@@ -26,11 +27,17 @@ export function SignupDesktopPartFiveMentor({
 
   async function createUser(event: FormEvent) {
     event.preventDefault()
-    console.log(formUser)
     api
       .post('/users', formUser)
-      .then((response) => console.log(response))
-      .catch((error) => console.log(error.response.data.message))
+      .then((response) => {
+        window.alert('Cadastro realizado com sucesso')
+        setFormUser({})
+        Router.push('./')
+      })
+      .catch((error) => {
+        window.alert('Erro ao cadastrar usuário')
+        Router.push('./')
+      })
   }
 
   return (

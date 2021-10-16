@@ -21,10 +21,6 @@ export default function Signup () {
   const [displayPartFiveMentor, setDisplayPartFiveMentor] = useState<'block' | 'none'>('none')
   const [displayPartFiveMentored, setDisplayPartFiveMentored] = useState<'block' | 'none'>('none')
 
-  useEffect(() => {
-    console.log(formUser)
-  }, [formUser])
-
   function handleFormUser(event: ChangeEvent<HTMLInputElement>) {
     formUser[event.target.name] = event.target.value
     setFormUser(formUser)
