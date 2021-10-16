@@ -1,4 +1,14 @@
-import { Text, Box, Link, Input, Flex, IconButton, Button } from '@chakra-ui/react'
+import {
+  Text,
+  Box,
+  Link,
+  Input,
+  Flex,
+  IconButton,
+  Button,
+  FormControl,
+  FormLabel,
+} from '@chakra-ui/react'
 import { ChevronLeftIcon } from '@chakra-ui/icons'
 
 export function SignupDesktopPartOne() {
@@ -9,93 +19,84 @@ export function SignupDesktopPartOne() {
       width="80%"
       margin="0 auto"
     >
-      <Text
-        fontSize="1rem"
-        color="#BABABA"
-        padding="3rem 0"
-      >
+      <Text fontSize="1rem" color="#BABABA" padding="3rem 0">
         Passo 1 de 5
       </Text>
-      <Box>
-        <Text
-          color="#232126"
-          fontSize="1.5rem"
-          fontWeight="bold"
-          paddingBottom=".5rem"
-        >
-          Como você gosta de ser chamado?
-        </Text>
-        <Input
-          placeholder="Insira aqui seu nome"
-          height="2.25rem"
-          width="47%"
-          marginBottom="1rem"
-        />
-      </Box>
-      <Box>
-        <Text
-          color="#232126"
-          fontSize="1.5rem"
-          fontWeight="bold"
-          paddingBottom=".5rem"
-        >
-          Qual seu email?
-        </Text>
-        <Input
-          placeholder="Digite aqui seu email"
-          height="2.25rem"
-          width="47%"
-          marginBottom="1rem"
-          type="email"
-        />
-      </Box>
-      <Box>
-        <Text
-          color="#232126"
-          fontSize="1.5rem"
-          fontWeight="bold"
-          paddingBottom=".5rem"
-        >
-          Qual seu linkedin?
-        </Text>
-        <Input
-          placeholder="Digite aqui seu email"
-          height="2.25rem"
-          width="47%"
-          marginBottom="1rem"
-          type="url"
-        />
-      </Box>
-      <Flex
-        width="47%"
-        marginBottom="1rem"
-        justifyContent="space-between"
-        marginTop="2rem"
-      >
-       <Flex
-          alignItems="center"
-          >
-          <IconButton
-            aria-label="Voltar"
-            icon={<ChevronLeftIcon/>}
-            height="3rem"
-            backgroundColor="#ffffff"
-            variant="unstyled"
-            fontSize="2rem"
-          />
-          <Text
-            fontSize="1rem"
-            color="#444444"
+      <form action="">
+        <FormControl id="name" isRequired>
+          <FormLabel
+            color="#232126"
+            fontSize="1.5rem"
             fontWeight="bold"
-            marginTop="0.5rem"
+            paddingBottom=".5rem"
           >
-            Voltar
-          </Text>
-        </Flex>
-        <Link
-          href="./signup-part-two"
-          color="#ffffff"
+            Como você gosta de ser chamado?
+          </FormLabel>
+          <Input
+            placeholder="Insira aqui seu nome"
+            height="2.25rem"
+            width="47%"
+            marginBottom="1rem"
+          />
+        </FormControl>
+        <FormControl id="email" isRequired>
+          <FormLabel
+            color="#232126"
+            fontSize="1.5rem"
+            fontWeight="bold"
+            paddingBottom=".5rem"
+          >
+            Qual seu email?
+          </FormLabel>
+          <Input
+            placeholder="Digite aqui seu email"
+            height="2.25rem"
+            width="47%"
+            marginBottom="1rem"
+            type="email"
+          />
+        </FormControl>
+        <FormControl id="linkedIn" isRequired>
+          <FormLabel
+            color="#232126"
+            fontSize="1.5rem"
+            fontWeight="bold"
+            paddingBottom=".5rem"
+          >
+            Qual seu linkedin?
+          </FormLabel>
+          <Input
+            placeholder="Digite aqui seu linkedIn"
+            height="2.25rem"
+            width="47%"
+            marginBottom="1rem"
+            type="url"
+          />
+        </FormControl>
+        <Flex
+          width="47%"
+          marginBottom="1rem"
+          justifyContent="space-between"
+          marginTop="2rem"
         >
+          <Flex alignItems="center">
+            <IconButton
+              aria-label="Voltar"
+              icon={<ChevronLeftIcon />}
+              height="3rem"
+              backgroundColor="#ffffff"
+              variant="unstyled"
+              fontSize="2rem"
+            />
+            <Text
+              fontSize="1rem"
+              color="#444444"
+              fontWeight="bold"
+              marginTop="0.5rem"
+            >
+              Voltar
+            </Text>
+          </Flex>
           <Button
             width="12rem"
             height="3rem"
@@ -103,15 +104,12 @@ export function SignupDesktopPartOne() {
             backgroundColor="#F26419"
             variant="unstyled"
             marginTop="1rem"
+            type="submit"
           >
-            <Text
-              fontSize="1rem"
-            >
-              Continuar
-            </Text>
+            <Text fontSize="1rem">Continuar</Text>
           </Button>
-        </Link>
-      </Flex>
+        </Flex>
+      </form>
     </Box>
   )
 }

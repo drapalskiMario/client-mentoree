@@ -1,4 +1,14 @@
-import { Text, Box, Link, Select, Flex, IconButton, Button } from '@chakra-ui/react'
+import {
+  Text,
+  Box,
+  Link,
+  Select,
+  Flex,
+  IconButton,
+  Button,
+  FormControl,
+  FormLabel,
+} from '@chakra-ui/react'
 import { ChevronLeftIcon } from '@chakra-ui/icons'
 
 export function SignupDesktopPartFiveMentored() {
@@ -9,11 +19,7 @@ export function SignupDesktopPartFiveMentored() {
       width="80%"
       margin="0 auto"
     >
-      <Text
-        fontSize="1rem"
-        color="#BABABA"
-        padding="3rem 0 3rem 0"
-      >
+      <Text fontSize="1rem" color="#BABABA" padding="3rem 0 3rem 0">
         Passo 5 de 5
       </Text>
       <Text
@@ -24,38 +30,34 @@ export function SignupDesktopPartFiveMentored() {
       >
         Encontre o mentor que se encaixe melhor com o que você procura.
       </Text>
-      <Box
-        marginTop="2rem"  
-      >
-        <Text
-          color="#232126"
-          fontSize="1.5rem"
-          fontWeight="bold"
-          paddingBottom=".5rem"
-        >
-          Quais especialidade você quer desenvolver?
-        </Text>
-        <Select
-          color="#8B8B8C"
+      <form>
+        <Box marginTop="2rem">
+          <FormControl id="specialties" isRequired>
+            <FormLabel
+              color="#232126"
+              fontSize="1.5rem"
+              fontWeight="bold"
+              paddingBottom=".5rem"
+            >
+              Quais especialidade você quer desenvolver?
+            </FormLabel>
+            <Select color="#8B8B8C" width="47%" marginBottom="5rem" size="lg" placeholder="selecione a especialidade">
+              <option value="Desing">Design</option>
+              <option value="DesenvolvimentoDeSoftware">
+                Desenvolvimento de Software
+              </option>
+              <option value="Marketing">Marketing</option>
+              <option value="Vendas">Vendas</option>
+            </Select>
+          </FormControl>
+        </Box>
+        <Flex
           width="47%"
-          marginBottom="5rem"
-          size="lg"
+          marginBottom="1rem"
+          justifyContent="space-between"
+          marginTop="2rem"
         >
-          <option selected disabled>Selecione sua especialidade</option>
-          <option value="Junior">Design</option>
-          <option value="DesenvolvimentoDeSoftware">Desenvolvimento de Software</option>
-          <option value="Marketing">Marketing</option>
-          <option value="Vendas">Vendas</option>
-        </Select>
-      </Box>
-      <Flex
-        width="47%"
-        marginBottom="1rem"
-        justifyContent="space-between"
-        marginTop="2rem"
-      >
-        <Flex alignItems="center">
-          <Link href="./signup-part-four">
+          <Flex alignItems="center">
             <IconButton
               aria-label="Voltar"
               icon={<ChevronLeftIcon />}
@@ -64,20 +66,15 @@ export function SignupDesktopPartFiveMentored() {
               variant="unstyled"
               fontSize="2rem"
             />
-          </Link>
-          <Text
-            fontSize="1rem"
-            color="#444444"
-            fontWeight="bold"
-            marginTop="0.5rem"
-          >
-            Voltar
-          </Text>
-        </Flex>
-        <Link
-          href="#"
-          color="#ffffff"
-        >
+            <Text
+              fontSize="1rem"
+              color="#444444"
+              fontWeight="bold"
+              marginTop="0.5rem"
+            >
+              Voltar
+            </Text>
+          </Flex>
           <Button
             width="12rem"
             height="3rem"
@@ -85,15 +82,12 @@ export function SignupDesktopPartFiveMentored() {
             backgroundColor="#F26419"
             variant="unstyled"
             marginTop="1rem"
+            type="submit"
           >
-            <Text
-              fontSize="1rem"
-            >
-              Finalizar
-            </Text>
+            <Text fontSize="1rem">Finalizar</Text>
           </Button>
-        </Link>
-      </Flex>
+        </Flex>
+      </form>
     </Box>
   )
 }
