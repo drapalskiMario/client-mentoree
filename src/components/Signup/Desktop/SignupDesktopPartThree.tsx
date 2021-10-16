@@ -10,11 +10,30 @@ import {
   FormLabel,
 } from '@chakra-ui/react'
 import { ChevronLeftIcon } from '@chakra-ui/icons'
+import { FormEvent } from 'react'
 
-export function SignupDesktopPartThree() {
+export function SignupDesktopPartThree({
+  displayPartThree,
+  handleFormUser,
+  setDisplayPartThree,
+  setDisplayPartFour,
+  setDisplayPartTwo,
+}) {
+
+    function nextStep(event: FormEvent) {
+      event.preventDefault()
+      setDisplayPartThree('none')
+      setDisplayPartFour('block')
+    }
+
+    function previousStep() {
+      setDisplayPartThree('none')
+      setDisplayPartTwo('block')
+    }
+
   return (
     <Box
-      display={['none', 'none', 'block']}
+      display={['none', 'none', displayPartThree]}
       height="calc(100vh - (5rem + 6rem))"
       width="80%"
       margin="0 auto"
@@ -39,7 +58,7 @@ export function SignupDesktopPartThree() {
       >
         Agora precisamos te conhecer melhor.
       </Text>
-      <form action="">
+      <form onSubmit={nextStep}>
         <FormControl id="about" isRequired>
           <FormLabel
             color="#232126"
@@ -56,6 +75,8 @@ export function SignupDesktopPartThree() {
             placeholder="Conte um pouco sobre você, seus interesses e o que você ama"
             width="47%"
             rows={7}
+            name="about"
+            onChange={handleFormUser}
           ></Textarea>
         </FormControl>
         <Flex
@@ -65,14 +86,15 @@ export function SignupDesktopPartThree() {
           marginTop="2rem"
         >
           <Flex alignItems="center">
-              <IconButton
-                aria-label="Voltar"
-                icon={<ChevronLeftIcon />}
-                height="3rem"
-                backgroundColor="#ffffff"
-                variant="unstyled"
-                fontSize="2rem"
-              />
+            <IconButton
+              aria-label="Voltar"
+              icon={<ChevronLeftIcon />}
+              height="3rem"
+              backgroundColor="#ffffff"
+              variant="unstyled"
+              fontSize="2rem"
+              onClick={previousStep}
+            />
             <Text
               fontSize="1rem"
               color="#444444"
@@ -82,17 +104,17 @@ export function SignupDesktopPartThree() {
               Voltar
             </Text>
           </Flex>
-            <Button
-              width="12rem"
-              height="3rem"
-              color="#ffffff"
-              backgroundColor="#F26419"
-              variant="unstyled"
-              marginTop="1rem"
-              type="submit"
-            >
-              <Text fontSize="1rem">Continuar</Text>
-            </Button>
+          <Button
+            width="12rem"
+            height="3rem"
+            color="#ffffff"
+            backgroundColor="#F26419"
+            variant="unstyled"
+            marginTop="1rem"
+            type="submit"
+          >
+            <Text fontSize="1rem">Continuar</Text>
+          </Button>
         </Flex>
       </form>
     </Box>

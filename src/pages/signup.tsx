@@ -53,7 +53,13 @@ export default function Signup () {
         setDisplayPartThree={setDisplayPartThree}
         setDisplayPartOne={setDisplayPartOne}
       />
-      <SignupDesktopPartThree />
+      <SignupDesktopPartThree
+        displayPartThree={displayPartThree}
+        handleFormUser={handleFormUser}
+        setDisplayPartThree={setDisplayPartThree}
+        setDisplayPartFour={setDisplayPartFour}
+        setDisplayPartTwo={setDisplayPartTwo}
+      />
       <SignupDesktopPartFour />
       <SignupDesktopPartFiveMentor />
       <SignupDesktopPartFiveMentored />
