@@ -71,9 +71,17 @@ export default function Signup () {
       />
       <SignupDesktopPartFiveMentor
         displayPartFiveMentor={displayPartFiveMentor}
+        setFormUser={setFormUser}
+        formUser={formUser}
+        setDisplayPartFiveMentor={setDisplayPartFiveMentor}
+        setDisplayPartFour={setDisplayPartFour}
       />
       <SignupDesktopPartFiveMentored
         displayPartFiveMentored={displayPartFiveMentored}
+        setFormUser={setFormUser}
+        formUser={formUser}
+        setDisplayPartFiveMentored={setDisplayPartFiveMentored}
+        setDisplayPartFour={setDisplayPartFour}
       />
       <SignupMobile />
       <FooterDesktop />

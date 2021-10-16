@@ -10,8 +10,24 @@ import {
   FormLabel,
 } from '@chakra-ui/react'
 import { ChevronLeftIcon } from '@chakra-ui/icons'
+import { FormEvent } from 'react'
 
-export function SignupDesktopPartFiveMentored({ displayPartFiveMentored }) {
+export function SignupDesktopPartFiveMentored({
+  displayPartFiveMentored,
+  setFormUser,
+  formUser,
+  setDisplayPartFiveMentored,
+  setDisplayPartFour,
+}) {
+    function createUser(event: FormEvent) {
+      event.preventDefault()
+      console.log(formUser)
+    }
+
+      function previousStep() {
+        setDisplayPartFiveMentored('none')
+        setDisplayPartFour('block')
+      }
   return (
     <Box
       display={['none', 'none', displayPartFiveMentored]}
@@ -30,7 +46,7 @@ export function SignupDesktopPartFiveMentored({ displayPartFiveMentored }) {
       >
         Encontre o mentor que se encaixe melhor com o que você procura.
       </Text>
-      <form>
+      <form onSubmit={createUser}>
         <Box marginTop="2rem">
           <FormControl id="specialties" isRequired>
             <FormLabel
@@ -47,6 +63,11 @@ export function SignupDesktopPartFiveMentored({ displayPartFiveMentored }) {
               marginBottom="5rem"
               size="lg"
               placeholder="selecione a especialidade"
+              name="specialties"
+              onChange={(event) => {
+                formUser.specialties = event.target.value
+                setFormUser(formUser)
+              }}
             >
               <option value="Desing">Design</option>
               <option value="DesenvolvimentoDeSoftware">
@@ -71,6 +92,7 @@ export function SignupDesktopPartFiveMentored({ displayPartFiveMentored }) {
               backgroundColor="#ffffff"
               variant="unstyled"
               fontSize="2rem"
+              onClick={previousStep}
             />
             <Text
               fontSize="1rem"

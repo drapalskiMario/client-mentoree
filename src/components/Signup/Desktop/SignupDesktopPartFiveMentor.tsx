@@ -9,8 +9,30 @@ import {
   FormLabel,
 } from '@chakra-ui/react'
 import { ChevronLeftIcon } from '@chakra-ui/icons'
+import { FormEvent } from 'react'
+import api from '../../../services/fetch-instace'
 
-export function SignupDesktopPartFiveMentor({ displayPartFiveMentor }) {
+export function SignupDesktopPartFiveMentor({
+  displayPartFiveMentor,
+  setFormUser,
+  formUser,
+  setDisplayPartFiveMentor,
+  setDisplayPartFour,
+}) {
+  function previousStep() {
+    setDisplayPartFiveMentor('none')
+    setDisplayPartFour('block')
+  }
+
+  async function createUser(event: FormEvent) {
+    event.preventDefault()
+    console.log(formUser)
+    api
+      .post('/users', formUser)
+      .then((response) => console.log(response))
+      .catch((error) => console.log(error.response.data.message))
+  }
+
   return (
     <Box
       display={['none', 'none', displayPartFiveMentor]}
@@ -29,7 +51,7 @@ export function SignupDesktopPartFiveMentor({ displayPartFiveMentor }) {
       >
         Como você pode ajudar a comunidade?
       </Text>
-      <form action="">
+      <form onSubmit={createUser}>
         <FormControl id="especialties" isRequired>
           <FormLabel
             color="#232126"
@@ -45,9 +67,14 @@ export function SignupDesktopPartFiveMentor({ displayPartFiveMentor }) {
             marginBottom="2rem"
             size="lg"
             placeholder="Selecione sua especialidade"
+            name="specialties"
+            onChange={(event) => {
+              formUser.specialties = event.target.value
+              setFormUser(formUser)
+            }}
           >
             <option value="Desing">Design</option>
-            <option value="DesenvolvimentoDeSoftware">
+            <option value="Desenvolvimento de Software">
               Desenvolvimento de Software
             </option>
             <option value="Marketing">Marketing</option>
@@ -69,6 +96,11 @@ export function SignupDesktopPartFiveMentor({ displayPartFiveMentor }) {
             marginBottom="2rem"
             size="lg"
             placeholder="Escolha seu nível"
+            name="seniority"
+            onChange={(event) => {
+              formUser.seniority = event.target.value
+              setFormUser(formUser)
+            }}
           >
             <option value="Junior">Junior</option>
             <option value="Pleno">Pleno</option>
@@ -89,6 +121,7 @@ export function SignupDesktopPartFiveMentor({ displayPartFiveMentor }) {
               backgroundColor="#ffffff"
               variant="unstyled"
               fontSize="2rem"
+              onClick={previousStep}
             />
             <Text
               fontSize="1rem"
@@ -106,6 +139,7 @@ export function SignupDesktopPartFiveMentor({ displayPartFiveMentor }) {
             backgroundColor="#F26419"
             variant="unstyled"
             marginTop="1rem"
+            type="submit"
           >
             <Text fontSize="1rem">Finalizar</Text>
           </Button>
