@@ -8,7 +8,7 @@ import { SignupDesktopPartThree } from '../components/Signup/Desktop/SignupDeskt
 import { SignupDesktopPartFour } from '../components/Signup/Desktop/SignupDesktopPartFour'
 import { SignupDesktopPartFiveMentor } from '../components/Signup/Desktop/SignupDesktopPartFiveMentor'
 import { SignupDesktopPartFiveMentored } from '../components/Signup/Desktop/SignupDesktopPartFiveMentored'
-import { useEffect, useState } from 'react'
+import { ChangeEvent, useEffect, useState } from 'react'
 import { User } from '../interfaces/User'
 
 export default function Signup () {
@@ -25,6 +25,11 @@ export default function Signup () {
     console.log(formUser)
   }, [formUser])
 
+  function handleFormUser(event: ChangeEvent<HTMLInputElement>) {
+    formUser[event.target.name] = event.target.value
+    setFormUser(formUser)
+  }
+
   return (
     <>
       <NavBar />
@@ -34,7 +39,13 @@ export default function Signup () {
         setDisplay={setDisplay}
         setDisplayPartOne={setDisplayPartOne}
       />
-      <SignupDesktopPartOne />
+      <SignupDesktopPartOne
+        displayPartOne={displayPartOne}
+        handleFormUser={handleFormUser}
+        setDisplayPartOne={setDisplayPartOne}
+        setDisplayPartTwo={setDisplayPartTwo}
+        setDisplay={setDisplay}
+      />
       <SignupDesktopPartTwo />
       <SignupDesktopPartThree />
       <SignupDesktopPartFour />

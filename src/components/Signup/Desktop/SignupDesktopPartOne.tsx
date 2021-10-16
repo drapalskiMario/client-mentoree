@@ -10,11 +10,29 @@ import {
   FormLabel,
 } from '@chakra-ui/react'
 import { ChevronLeftIcon } from '@chakra-ui/icons'
+import { FormEvent } from 'react'
 
-export function SignupDesktopPartOne() {
+export function SignupDesktopPartOne({
+  displayPartOne,
+  handleFormUser,
+  setDisplayPartOne,
+  setDisplayPartTwo,
+  setDisplay,
+}) {
+  
+  function nextStep(event: FormEvent) {
+    event.preventDefault()
+    setDisplayPartOne('none')
+    setDisplayPartTwo('block')
+  }
+
+  function previousStep() {
+    setDisplayPartOne('none')
+    setDisplay('flex')
+  }
   return (
     <Box
-      display={['none', 'none', 'block']}
+      display={['none', 'none', displayPartOne]}
       height="calc(100vh - (5rem + 6rem))"
       width="80%"
       margin="0 auto"
@@ -22,7 +40,7 @@ export function SignupDesktopPartOne() {
       <Text fontSize="1rem" color="#BABABA" padding="3rem 0">
         Passo 1 de 5
       </Text>
-      <form action="">
+      <form onSubmit={nextStep}>
         <FormControl id="name" isRequired>
           <FormLabel
             color="#232126"
@@ -37,6 +55,8 @@ export function SignupDesktopPartOne() {
             height="2.25rem"
             width="47%"
             marginBottom="1rem"
+            name="name"
+            onChange={handleFormUser}
           />
         </FormControl>
         <FormControl id="email" isRequired>
@@ -54,6 +74,8 @@ export function SignupDesktopPartOne() {
             width="47%"
             marginBottom="1rem"
             type="email"
+            name="email"
+            onChange={handleFormUser}
           />
         </FormControl>
         <FormControl id="linkedIn" isRequired>
@@ -71,6 +93,8 @@ export function SignupDesktopPartOne() {
             width="47%"
             marginBottom="1rem"
             type="url"
+            name="linkedIn"
+            onChange={handleFormUser}
           />
         </FormControl>
         <Flex
@@ -87,6 +111,7 @@ export function SignupDesktopPartOne() {
               backgroundColor="#ffffff"
               variant="unstyled"
               fontSize="2rem"
+              onClick={nextStep}
             />
             <Text
               fontSize="1rem"
