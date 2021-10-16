@@ -1,7 +1,6 @@
 import {
   Text,
   Box,
-  Link,
   Select,
   Flex,
   IconButton,
@@ -11,6 +10,7 @@ import {
 } from '@chakra-ui/react'
 import { ChevronLeftIcon } from '@chakra-ui/icons'
 import { FormEvent } from 'react'
+import api from '../../../services/fetch-instace'
 
 export function SignupDesktopPartFiveMentored({
   displayPartFiveMentored,
@@ -19,10 +19,15 @@ export function SignupDesktopPartFiveMentored({
   setDisplayPartFiveMentored,
   setDisplayPartFour,
 }) {
-    function createUser(event: FormEvent) {
-      event.preventDefault()
-      console.log(formUser)
-    }
+
+  async function createUser(event: FormEvent) {
+    event.preventDefault()
+    console.log(formUser)
+    api
+      .post('/users', formUser)
+      .then((response) => console.log(response))
+      .catch((error) => console.log(error.response.data.message))
+  }
 
       function previousStep() {
         setDisplayPartFiveMentored('none')
@@ -70,7 +75,7 @@ export function SignupDesktopPartFiveMentored({
               }}
             >
               <option value="Desing">Design</option>
-              <option value="DesenvolvimentoDeSoftware">
+              <option value="Desenvolvimento de Software">
                 Desenvolvimento de Software
               </option>
               <option value="Marketing">Marketing</option>
