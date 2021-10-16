@@ -28,11 +28,11 @@ export function SignupDesktopPartFiveMentored({
       .then((response) => {
         window.alert('Cadastro realizado com sucesso')
         setFormUser({})
-        Router.push('./')
+         Router.push('./search')
       })
       .catch((error) => {
         window.alert('Erro ao cadastrar usuário')
-        Router.push('./')
+         Router.push('./search')
       })
   }
 
