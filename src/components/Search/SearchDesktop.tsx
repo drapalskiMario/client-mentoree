@@ -5,9 +5,9 @@ import {
   Flex,
   FormControl,
   Select,
-  Image,
   Grid,
   Text,
+  Avatar,
 } from '@chakra-ui/react'
 import { SearchIcon } from '@chakra-ui/icons'
 import api from '../../services/fetch-instace'
@@ -92,12 +92,13 @@ export default function SearchDesktop() {
           mentors.map((mentors) => (
             // eslint-disable-next-line react/jsx-key
             <Box width="95%" margin="0.5rem">
-              <Image
+              <Avatar
                 alt="Foto Mentor"
                 src={mentors.image}
                 borderRadius="1rem"
                 width="100%"
                 height="80%"
+                name={mentors.name}
               />
               <Flex
                 flexDirection="column"

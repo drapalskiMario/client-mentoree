@@ -73,6 +73,7 @@ export function HomeDeskTopOne() {
           }}
         >
           <Link
+            href="./search"
           >
             <Text
               fontSize="1.2rem"

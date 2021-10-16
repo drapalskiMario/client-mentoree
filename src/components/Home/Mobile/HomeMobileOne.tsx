@@ -58,7 +58,7 @@ export function HomeMobileOne({ displayActive }) {
             backgroundColor: '#F26419',
           }}
         >
-          <Link>Pesquisar</Link>
+          <Link href="./search">Pesquisar</Link>
         </Button>
       </Box>
     </Flex>
