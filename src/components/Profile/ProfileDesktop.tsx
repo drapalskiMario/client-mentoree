@@ -1,6 +1,16 @@
-import { Flex, Box, Avatar, Heading, Text, Link, Image, Button, HStack } from '@chakra-ui/react'
+import {
+  Flex,
+  Box,
+  Avatar,
+  Heading,
+  Text,
+  Link,
+  Image,
+  Button,
+  HStack,
+} from '@chakra-ui/react'
 
-export function ProfileDesktop () {
+export function ProfileDesktop() {
   return (
     <Flex
       display={['none', 'none', 'flex']}
@@ -73,19 +83,28 @@ export function ProfileDesktop () {
             Linkedin
           </Text>
         </Link>
-      <Link href="./schedule-part-one">
-        <Button
-          fontSize="1rem"
-          margin="2rem auto 1rem auto"
-          width="70%"
-          height="3rem"
-          background="#F26419"
-          color="#FFFFFF"
-          variant="unstyled"
+        <Flex
+          width="100%"
         >
-          Quero agendar
-        </Button>
-      </Link>
+          <Link
+            href="./schedule-part-one"
+            margin="2rem auto 1rem auto"
+            width="100%"
+            textAlign="center"
+            color="#fff"
+          >
+            <Button
+              fontSize="1rem"
+              height="3rem"
+              background="#F26419"
+              color="#FFFFFF"
+              width="40%"
+              variant="unstyled"
+            >
+              Quero agendar
+            </Button>
+          </Link>
+        </Flex>
       </Flex>
     </Flex>
   )
